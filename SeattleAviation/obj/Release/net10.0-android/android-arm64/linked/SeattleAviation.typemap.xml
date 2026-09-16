@@ -1,0 +1,8 @@
+<api type="release" assembly-name="SeattleAviation" mvid="5b09e2e588f14ec99922181346a1c668">
+  <module assembly-name="SeattleAviation" mvid="5b09e2e588f14ec99922181346a1c668" mvid-bytes="5eIJW/GIyU6ZIhgTRqHGaA==">
+    <types-scratch>
+      <entry key="crc64b839ff2ce28d2db8/MainActivity" java-name="crc64b839ff2ce28d2db8/MainActivity" managed-type-name="SeattleAviation.MainActivity" token="33554441" />
+      <entry key="crc64b839ff2ce28d2db8/MainApplication" java-name="crc64b839ff2ce28d2db8/MainApplication" managed-type-name="SeattleAviation.MainApplication" token="33554442" />
+    </types-scratch>
+  </module>
+</api>

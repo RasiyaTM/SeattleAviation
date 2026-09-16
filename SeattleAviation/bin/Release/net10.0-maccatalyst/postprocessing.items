@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="SeattleAviation.app/Contents\MacOS\">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>SeattleAviation.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile></SymbolFile>
+      <DSymName>SeattleAviation.app.dSYM</DSymName>
+      <SourceProjectPath>C:\Users\WINDOWS 11\source\repos\SeattleAviation\SeattleAviation</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+name: Build Mac Executable
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Install MAUI Workload
+        run: dotnet workload install maui
+
+      - name: Publish Mac App Bundle (.app)
+        run: dotnet publish -c Release -f net10.0-maccatalyst -p:CreatePackage=true
+
+      - name: Install create-dmg tool
+        run: brew install create-dmg
+
+      - name: Create Mac Installer (.dmg)
+        run: |
+          create-dmg \
+            --volname "Seattle Aviation" \
+            --window-pos 200 120 \
+            --window-size 600 300 \
+            --icon-size 100 \
+            --hide-extension "SeattleAviation.app" \
+            --app-drop-link 425 120 \
+            "SeattleAviation.dmg" \
+            "bin/Release/net10.0-maccatalyst/publish/SeattleAviation.app"
+
+      - name: Upload Mac Installer (.dmg)
+        uses: actions/upload-artifact@v3
+        with:
+          name: SeattleAviation-Mac-Installer
+          path: SeattleAviation.dmg
